@@ -1,0 +1,9 @@
+<h2 class="mb-3 underline">Post Item</h2>
+
+<!-- Add new item form -->
+<form [formGroup]="itemForm" (ngSubmit)="addItem()">
+  <label for="itemName">Name:</label>
+  <input type="text" id="itemName" formControlName="name" class="appearance-none block w-full bg-gray-200 text-gray-700 border
+   border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+  <button type="submit" [disabled]="!itemForm.valid" class="bg-blue-500 mt-2 hover:bg-blue-700 text-white py-2 px-3 rounded">Add Item</button>
+</form>
