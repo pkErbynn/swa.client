@@ -1,27 +1,65 @@
 # Swa
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.8.
+A web application built with Angular and .NET. The application allows users to view a list of items, add new items, and perform concurrent data processing on each item.
 
-## Development server
+## Prerequisites
+Before starting with the setup, ensure you have the following tools installed on your machine:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Node.js and npm
+- Angular CLI
+- .NET SDK
 
-## Code scaffolding
+## Setup
+### Angular
+Step 1: Clone the project Repositories
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+$ git clone https://github.com/pkErbynn/swa.client.git
+```
 
-## Build
+Step 2: Navigate to the project directory and install dependencies
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+$ cd swa.client
+$ npm install
+```
 
-## Running unit tests
+Step 2: Run the app
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+$ ng serve --open
+```
+Automatically or manually open a web browser and navigate to http://localhost:4200.
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### .NET Backend
+Step 1: Clone the project Repositories
 
-## Further help
+```bash
+$ git clone https://github.com/pkErbynn/swa.api.git
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Step 2: Navigate to the project directory and restore dependencies
+
+```bash
+$ cd swa.api
+$ dotnet restore
+$ dotnet build
+```
+
+Step 3: Run the .NET app
+
+```bash
+$ dotnet run
+```
+
+Open a tool like Postman or use a web browser to access the API at `http://localhost:5291/api/Items`.
+The api can be verified using Swagger `http://localhost:5291/swagger/index.html`
+
+## Usage
+1. Add items to the in-memory db using the Angular UI or the Swagger explorer
+2. The UI will be displaying the list of items
+3. If the backend is not up, an error message will be shown
+4. Once the items are populated, the concurrent data processing can be triggered using the 'Process Items Concurrently' button
+    - If the factorial is 0, click the button again
+
